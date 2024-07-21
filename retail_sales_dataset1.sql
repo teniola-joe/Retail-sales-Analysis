@@ -1,6 +1,6 @@
 SELECT * FROM public.retail_sales_dataset;
 
-COPY PUBLIC.retail_sales_dataset FROM 'C:\Users\Teniola\Desktop\Data Analytics\retail_sales_dataset.csv' WITH CSV HEADER;
+COPY PUBLIC.retail_sales_dataset FROM 'C:\Users\Teniola\Desktop\Data Analytics\New folder\retail_sales_dataset.csv' WITH CSV HEADER;
 
 SELECT "product_category", SUM ("total_amount") AS "total_sales" FROM public.retail_sales_dataset GROUP BY "product_category";
 
@@ -27,3 +27,6 @@ SELECT gender, COUNT(*)AS number_of_customers FROM public.retail_sales_dataset G
 
 SELECT product_category, DATE_TRUNC('month', customer_date)AS month, SUM (total_amount) AS "total_sales" FROM public.retail_sales_dataset
 GROUP BY product_category, DATE_TRUNC('month', customer_date) ORDER BY product_category, month;
+
+SELECT "age", SUM ("total_amount") AS "total_sales" FROM public.retail_sales_dataset GROUP BY "age";
+
